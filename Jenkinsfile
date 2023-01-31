@@ -8,9 +8,11 @@ pipeline {
             }
         }
         stage('ansible') {
-            sh """
-            ansible-playbook -i hosts ansible.yaml -k
-            """
+            steps{
+                 sh """
+                 ansible-playbook -i hosts ansible.yaml -k
+                 """
+            }
         }
     }
 }
